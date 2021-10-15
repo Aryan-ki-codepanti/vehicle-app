@@ -1,0 +1,70 @@
+{% extends "base/basic.html" %}
+
+{% block title %}
+<title>Home </title>
+{% endblock %} 
+
+
+{% block content %}
+    <div class="home-container">
+        
+        <h1> Vehicle List </h1>
+
+        <div>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th class="short-col"> Sno. </th>
+                        <th> Name </th>
+                        <th> Ignition </th>
+                        <th> Average Speed </th>
+                        <th>  </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for vehicle in vehicles %}
+                        <tr>
+
+                            <td class="short-col">{{ forloop.counter }}</td>
+                            <td>{{ vehicle.name }}</td>
+
+                            {% if vehicle.ignition %}
+                                <td>ON</td>
+                            {% else %}
+                                <td>OFF</td>
+                            {% endif %}
+                        
+                            <td>{{ vehicle.avg_speed }}</td>
+                            <td> <a class="updateBtn" href="/update/{{ vehicle.id }}">Update</a> </td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+        </div>
+
+        
+
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script>
+
+
+        // show its active
+        homeLi.classList.add("active-li");
+        homeLi.getElementsByTagName("a")[0].classList.add("active-a");
+
+        aboutLi.classList.remove("active-li");
+        aboutLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+        addLi.classList.remove("active-li");
+        addLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+    </script>
+{% endblock js %}

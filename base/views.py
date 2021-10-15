@@ -1,22 +1,20 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Vehicle
 
 # Create your views here.
 
 def home(request):
-    return HttpResponse("Home here")
+    vehicles = Vehicle.objects.all()
+    return render(request , "base/home.html" , { "vehicles": vehicles })
 
 
 def vehicle(request , id):
     vehicle = Vehicle.objects.get(id=id)
-    print(vehicle)
-    return HttpResponse("Vehicle Here")
+    return render(request , "base/vehicle.html" , { "vehicle": vehicle})
 
 def add(request):
-    return HttpResponse("add vehicle here")
+    return render(request , "base/add.html")
 
 def update(request , id):
     print(id)
-    return HttpResponse("update vehicle here")
+    return render(request , "base/update.html")

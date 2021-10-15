@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base/css/styles.css' %}">
+
+    {% block title %}
+    {% endblock title %}
+
+    {% block css %}
+    {% endblock css %}
+
+</head>
+<body>
+
+    <div class="master">     
+
+        <div class="app__logo">
+            <img  class="logo" src="{% static 'base/img/svg/siteguide_logo.svg' %}" alt="">
+        </div>
+
+        <div class="app__navbar">
+            <ul>
+                <li id="li-home"><a href="/"> Home </a></li>
+                <li id="li-about"><a  href="/about"> About </a></li>
+                <li id="li-add"><a  href="/add"> Add </a></li>
+            </ul>
+        </div>
+        <div class="app__topbar">
+            <img  src="{% static 'base/img/profile2.jpg' %}" alt="">
+        </div>
+        <div class="app__content">
+            
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    <script>
+        // dom elements
+        const homeLi = document.getElementById("li-home");
+        const aboutLi = document.getElementById("li-about");
+        const addLi = document.getElementById("li-add");
+
+    
+    </script>
+    {% block js %}
+    {% endblock js %}
+</body>
+
+
+</html>
