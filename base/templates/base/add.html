@@ -1,0 +1,40 @@
+{% extends "base/basic.html" %}
+{% load static %}
+{% block title %}
+<title> Add Vehicle | Siteguide </title>
+{% endblock %} 
+
+{% block content %}
+
+    <div class="form__container">
+        <h1 class="text-center"> Add a Vehicle </h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+
+            <div class="submitBtnBox">
+                <input class="submitBtn" type="submit" value="Add to Vehicles">
+            </div>
+
+        </form>
+    </div>
+
+{% endblock content %}
+
+
+{% block js %}
+    <script>
+
+
+        // show its active
+        homeLi.classList.remove("active-li");
+        homeLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+        aboutLi.classList.remove("active-li");
+        aboutLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+        addLi.classList.add("active-li");
+        addLi.getElementsByTagName("a")[0].classList.add("active-a");
+
+    </script>
+{% endblock js %}

@@ -87,16 +87,13 @@
 
 /* Home */
 
-.home-container {
+.home-container , .form__container {
     width: 80%;
     max-width: 1200px;
     margin: 4em auto;
 }
 
-.home-container h1 {
-    text-align: center;
-    margin-bottom: 1em;
-}
+
 
 table {
     border-collapse: collapse;
@@ -320,4 +317,55 @@ tr:nth-child(even) {
 .vehicle__footer > *{
     width: 100%;
     max-width: 30rem;
+}
+
+/* Add form */
+.form__container h1 , .home-container h1{
+    font-family: "Nunito";
+    margin-bottom: 1.2em;
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(255, 112, 255);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+
+form p {
+    display: flex;
+    font-size: 1.3rem;
+}
+
+form p label{
+    text-align: center;
+}
+
+form p > *{
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.3em ;
+}
+
+.submitBtnBox{
+    display: flex;
+    justify-content: center;
+    margin: 3em 0;
+}
+
+.submitBtn{
+    color: white;
+    background: rgb(0, 163, 8);
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.5em 0.8em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submitBtn:hover{
+    background: rgb(1, 102, 6);
 }
