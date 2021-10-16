@@ -1,0 +1,116 @@
+{% extends "base/basic.html" %}
+{% load static %}
+{% block title %}
+<title> {{ vehicle.name }} | Siteguide </title>
+{% endblock %} 
+
+{% block content %}
+    <div class="vehicle__container">
+        
+        <div class="vehicle__header">
+
+            <div class="icon">
+                <img src="/media/{{ vehicle.logo }}" alt="">
+            </div>
+
+            <div class="cameras">
+                <img src="/media/{{ vehicle.camera1 }}" alt="">
+                <img src="/media/{{ vehicle.camera2 }}" alt="">
+            </div>
+
+            <div class="buttons">
+                {% if vehicle.ignition %}
+                    <button class="btn off-outline">OFF</button>
+                    <button class="btn on-contained">ON</button>
+                {% else %}
+                    <button class="btn off-contained">OFF</button>
+                    <button class="btn on-outline">ON</button>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <div class="vehicle__main">
+            <!-- Map -->
+
+                <div class="map">
+                    <img src="/media/{{ vehicle.static_map }}" alt="">
+                </div>
+
+                <div class="main-cards">
+                    <!-- Status card -->
+                    <div class="card card-blue">
+                        <h2> Speed </h2>
+                        <div class="card-body card-p-blue">
+                            <p>{{ vehicle.speed }}</p>
+                            <span> Kmph </span>
+
+                        </div>
+                    </div>
+
+                    <!-- Status card -->
+                    <div class="card card-orange">
+                        <h2> Avg.Speed </h2>
+                        <div class="card-body">
+                            <p class="card-p-orange">{{ vehicle.avg_speed }}</p>
+                            <span> Kmph </span>
+
+                        </div>
+                    </div>
+                
+                </div>
+                
+
+
+        </div>
+        <div class="vehicle__footer">
+            <!-- Status card -->
+                    <div class="card card-red">
+                        <h2> Engine Status </h2>
+                        <div class="card-body">
+                            <p class="card-p-red">{{ vehicle.engine_status }}</p>
+
+                        </div>
+                    </div>
+
+                    <!-- Status card -->
+                    <div class="card card-green">
+                        <h2> Fuel Level </h2>
+                        <div class="card-body">
+                            <p class="card-p-green">{{ vehicle.fuel_level }}</p>
+                            <span> % </span>
+
+                        </div>
+                    </div>
+
+                    <!-- Status card -->
+                    <div class="card card-violet">
+                        <h2> Temperature </h2>
+                        <div class="card-body">
+                            <p class="card-p-violet">{{ vehicle.temperature }}</p>
+                            <span> &deg; C </span>
+
+                        </div>
+                    </div>
+        </div>
+        
+    </div>
+{% endblock content %}
+
+
+{% block js %}
+    <script>
+
+
+        // show its active
+        homeLi.classList.add("active-li");
+        homeLi.getElementsByTagName("a")[0].classList.add("active-a");
+
+        aboutLi.classList.remove("active-li");
+        aboutLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+        addLi.classList.remove("active-li");
+        addLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+    </script>
+{% endblock js %}
