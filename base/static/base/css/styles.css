@@ -89,10 +89,11 @@
 
 .home-container,
 .form__container , 
-.delete__container {
+.delete__container , 
+.about__container {
     width: 80%;
     max-width: 1200px;
-    margin: 4em auto;
+    margin: 4em auto 0;
 }
 
 table {
@@ -169,7 +170,7 @@ tr:nth-child(even) {
 /* Vehicle container */
 .vehicle__container {
     width: 90%;
-    margin: 2em auto;
+    margin: 2em auto 0;
 }
 
 .vehicle__header,
@@ -332,7 +333,8 @@ tr:nth-child(even) {
 /* Add form */
 .form__container h1,
 .home-container h1 ,
-.delete__container h1{
+.delete__container h1 , 
+.about__container h1{
     font-family: "Nunito";
     margin-bottom: 1.2em;
     text-align: center;
@@ -364,7 +366,7 @@ form p > * {
 .submitBtnBox {
     display: flex;
     justify-content: center;
-    margin: 3em 0;
+    margin: 3em 0 0;
 }
 
 .submitBtn {
@@ -412,4 +414,24 @@ form p > * {
 }
 .cancelBtn:hover{
     background: #8a8181;
+}
+
+.about__container { 
+    border: 2px solid red;
+    padding: 2em;
+    border-radius: 20px;
+    background: rgba(0, 255, 34, 0.192);
+}
+.about__container p{
+    margin: 1.2em 0 ;
+    font-size: 1.2rem;
+}
+
+/* Scroll fix */
+.form__container{
+    overflow: hidden;
+}
+
+.app__content{
+    overflow: hidden;
 }

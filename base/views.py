@@ -56,3 +56,6 @@ def delete(request , id):
         
     # get request
     return render(request , "base/delete.html" , {"vehicle": vehicle })
+
+def about(request):
+    return render(request , "base/about.html")
