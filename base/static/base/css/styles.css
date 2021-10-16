@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     margin: 0;
@@ -87,13 +87,13 @@
 
 /* Home */
 
-.home-container , .form__container {
+.home-container,
+.form__container , 
+.delete__container {
     width: 80%;
     max-width: 1200px;
     margin: 4em auto;
 }
-
-
 
 table {
     border-collapse: collapse;
@@ -117,7 +117,8 @@ tr:nth-child(even) {
 }
 
 .updateBtn,
-.readBtn {
+.readBtn,
+.deleteBtn {
     padding: 0.5em 0.7em;
     font-size: 1.2rem;
     color: #fff;
@@ -129,6 +130,13 @@ tr:nth-child(even) {
 }
 .updateBtn:hover {
     background: rgb(243, 10, 10);
+}
+
+.deleteBtn {
+    background: rgb(99, 82, 251);
+}
+.deleteBtn:hover {
+    background: rgb(56, 33, 255);
 }
 
 .readBtn {
@@ -146,7 +154,8 @@ tr:nth-child(even) {
 
 @media screen and (max-width: 1200px) {
     .updateBtn,
-    .readBtn {
+    .readBtn , 
+    .deleteBtn {
         font-size: 0.7rem;
         display: inline-block;
         width: 100%;
@@ -170,15 +179,16 @@ tr:nth-child(even) {
     align-items: center;
 }
 
-.vehicle__header{
+.vehicle__header {
     justify-content: space-between;
 }
 
-.cameras , .buttons{
+.cameras,
+.buttons {
     gap: 3em;
 }
 
-.cameras img{
+.cameras img {
     height: 100px;
     width: 280px;
 }
@@ -219,8 +229,8 @@ tr:nth-child(even) {
 
 /* Card */
 
-.card{
-    border: 8px solid ;
+.card {
+    border: 8px solid;
     border-radius: 20px;
     padding: 2em 1.7em;
     /* width: 20rem; */
@@ -231,96 +241,98 @@ tr:nth-child(even) {
     font-family: "Nunito";
 }
 
-.card-body{
+.card-body {
     display: flex;
     align-items: baseline;
     gap: 0.5em;
 }
-.card-body p{
+.card-body p {
     font-size: 4rem;
     font-weight: 700;
 }
-.card-body span{
+.card-body span {
     font-size: 1.3rem;
 }
 
-.card-green{
+.card-green {
     border-color: green;
 }
-.card-p-green{
+.card-p-green {
     color: green;
 }
 
-.card-orange{
+.card-orange {
     border-color: orange;
 }
-.card-p-orange{
+.card-p-orange {
     color: orange;
 }
 
-.card-blue{
+.card-blue {
     border-color: blue;
 }
-.card-p-blue{
+.card-p-blue {
     color: blue;
 }
 
-.card-violet{
+.card-violet {
     border-color: violet;
 }
-.card-p-violet{
+.card-p-violet {
     color: violet;
 }
 
-.card-red{
+.card-red {
     border-color: red;
 }
-.card-p-red{
+.card-p-red {
     color: red;
 }
 
-.vehicle__main{
+.vehicle__main {
     display: flex;
     /* justify-content: space-between; */
     margin: 3em 0;
 }
 
-.map{
+.map {
     flex: 0.7;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.map img{
+.map img {
     width: 90%;
     /* padding: 0.5em; */
     height: 450px;
 }
 
-.main-cards{
+.main-cards {
     flex: 0.3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.main-cards > * { 
+.main-cards > * {
     width: 100%;
 }
 
-.vehicle__footer{
+.vehicle__footer {
     display: flex;
     justify-content: space-between;
 }
 
-.vehicle__footer > *{
+.vehicle__footer > * {
     width: 100%;
     max-width: 30rem;
 }
 
 /* Add form */
-.form__container h1 , .home-container h1{
+.form__container h1,
+.home-container h1 ,
+.delete__container h1{
     font-family: "Nunito";
     margin-bottom: 1.2em;
     text-align: center;
@@ -334,29 +346,28 @@ form {
     gap: 0.6em;
 }
 
-
 form p {
     display: flex;
     font-size: 1.3rem;
 }
 
-form p label{
+form p label {
     text-align: center;
 }
 
-form p > *{
+form p > * {
     width: 100%;
     font-size: 1.3rem;
-    padding: 0.3em ;
+    padding: 0.3em;
 }
 
-.submitBtnBox{
+.submitBtnBox {
     display: flex;
     justify-content: center;
     margin: 3em 0;
 }
 
-.submitBtn{
+.submitBtn {
     color: white;
     background: rgb(0, 163, 8);
     border: none;
@@ -366,6 +377,39 @@ form p > *{
     cursor: pointer;
 }
 
-.submitBtn:hover{
+.submitBtn:hover {
     background: rgb(1, 102, 6);
+}
+
+
+/* confirm deletion */
+
+.confirmBox{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.delBtn ,
+.cancelBtn{
+    padding: 0.5em 0.7em;
+    font-size: 1.4rem;
+    color: #fff;
+    border-radius: 8px;   
+    border: none;
+    cursor: pointer;
+}
+
+.delBtn {
+    background: rgb(99, 82, 251);
+}
+.delBtn:hover {
+    background: rgb(56, 33, 255);
+}
+.cancelBtn{
+
+    background: #bbb8b8;
+}
+.cancelBtn:hover{
+    background: #8a8181;
 }

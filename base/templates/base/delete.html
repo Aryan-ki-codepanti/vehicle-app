@@ -1,0 +1,40 @@
+{% extends "base/basic.html" %}
+{% load static %}
+{% block title %}
+<title> Confirm Deletion | Siteguide </title>
+{% endblock %} 
+
+{% block content %}
+    
+    <div class="delete__container">
+        <h1>Are you Sure you want to Delete {{ vehicle.name }} ? </h1>
+
+            <form action="/delete/{{ vehicle.id }}" method="POST">
+                {% csrf_token %}
+                <div class="confirmBox">
+                    <button class="delBtn" type="submit"> Delete  </button>
+                    <a class="cancelBtn" href="/"> Cancel </a>
+                </div>
+            </form>
+
+    </div>
+
+{% endblock content %}
+
+
+{% block js %}
+    <script>
+
+
+        // show its active
+        homeLi.classList.add("active-li");
+        homeLi.getElementsByTagName("a")[0].classList.add("active-a");
+
+        aboutLi.classList.remove("active-li");
+        aboutLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+        addLi.classList.remove("active-li");
+        addLi.getElementsByTagName("a")[0].classList.remove("active-a");
+
+    </script>
+{% endblock js %}
