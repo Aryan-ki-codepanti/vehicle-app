@@ -92,14 +92,14 @@
 /* Home */
 
 .home-container{
-    width: 70%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 1200px;
     margin: 4em auto;
-    border: 2px solid red;
 }
 
 .home-container h1 {
     text-align: center;
+    margin-bottom: 1em;
 }
 
 table {
@@ -119,4 +119,44 @@ tr:nth-child(even) {
 
 .short-col{
     width: 70px;
+}
+
+.updateBtn , .readBtn{
+    padding: 0.5em 0.7em;
+    font-size: 1rem;
+    color: #fff;
+
+}
+
+.updateBtn{
+    background: rgb(251, 82, 82);
+}
+.updateBtn:hover{
+    background: rgb(243, 10, 10);
+}
+
+.readBtn{
+    background:rgb(55, 199, 55);
+}
+
+
+.readBtn:hover{
+    background:rgb(5, 153, 5);
+}
+
+.btnTd {
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .updateBtn , .readBtn{
+        font-size: 0.7rem;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.text-center{
+    text-align: center;
 }

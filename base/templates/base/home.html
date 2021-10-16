@@ -19,7 +19,8 @@
                         <th> Name </th>
                         <th> Ignition </th>
                         <th> Average Speed </th>
-                        <th>  </th>
+                        <th class="text-center"> Update </th>
+                        <th class="text-center"> More Info </th>
                     </tr>
                 </thead>
 
@@ -37,8 +38,9 @@
                                 <td>OFF</td>
                             {% endif %}
                         
-                            <td>{{ vehicle.avg_speed }}</td>
-                            <td> <a class="updateBtn" href="/update/{{ vehicle.id }}">Update</a> </td>
+                            <td>{{ vehicle.avg_speed }} kmph</td>
+                            <td class="btnTd"> <a class="updateBtn" href="/update/{{ vehicle.id }}">Update</a> </td>
+                            <td class="btnTd"> <a class="readBtn" href="/vehicle/{{ vehicle.id }}">Read More</a> </td>
                         </tr>
                     {% endfor %}
                     
